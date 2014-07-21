@@ -1,0 +1,59 @@
+<html><!--{{{-->
+<head>
+<title>Kennedy Event Marker Client</title>
+<style>
+input, output, textarea {
+  box-shadow: 1px 1px 5px #ccc inset;
+  border: none;
+  padding: 1em;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  padding: 1px;
+  font-size: 12pt;
+  padding: 1em;
+  background: #eee;
+}
+
+output {
+  display: block;
+  background: #eee;
+}
+</style>
+</head>
+<body><!--}}}-->
+
+<div id="connect_box">
+  <label>Step 1. Connect to the Device</label>
+  </br>
+  <select id="port_list"><option>Please Wait...</option></select>
+  <button id="connect_button">Connect</button>
+</div>
+
+<div id="control_box">
+  <label>Step 2. Start/Stop Experiment</label>
+  </br>
+  <button id="start_experiment_button" disabled>Start Experiment</button>
+  <button id="stop_experiment_button" disabled=true>Stop Experiment</button>
+</div>
+
+<div id="csv_content_monitor">
+  <label>Monitor CSV File Being Generated</label>
+  <textarea id="textAreaId" readonly></textarea>
+</div>
+<button id="save_file">Save As</button>
+
+<div id="status_bar">
+  <label>Program Monitor</label>
+  <output></output>
+</div>
+
+<!-- Include main code -->
+<script src="js/dragndrop.js"></script>
+<script src="js/files.js"></script>
+<script src="js/serial.js"></script>
+
+</body>
+</html>
