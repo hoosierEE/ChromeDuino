@@ -1,4 +1,4 @@
-# Bidirectional Chrome <-> Arduino Serial Comms
+# Chrome Arduino 
 Serial messages to/from a Chrome App, from/to an Arduino
 
 ## Install Development Version
@@ -13,7 +13,7 @@ Serial messages to/from a Chrome App, from/to an Arduino
 
 ## Install Stable Version
 
-1. click link (todo: add link here)
+1. click link (todo: add link to Chrome Web Store here)
 2. click the `Add to Chrome` button
 
 
@@ -21,3 +21,25 @@ Serial messages to/from a Chrome App, from/to an Arduino
 Click the `Launch` link in the extensions page to start the app.
 
 Or, if you have the Chrome App Launcher already installed, the app should appear there.
+
+### This Repository
+```
+.
+├── Arduino
+│   ├── lib
+│   └── src
+│       ├── src.ino
+│       └── StateMachine.h
+├── ChromeApp
+│   ├── assets
+│   │   ├── icon_128x128.png
+│   │   └── icon_16x16.png
+│   ├── background.js
+│   ├── index.html
+│   ├── js
+│   │   ├── dragndrop.js
+│   │   ├── files.js
+│   │   └── serial.js
+│   └── manifest.json
+└── README.md
+```
