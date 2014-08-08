@@ -1,6 +1,6 @@
 {
-  "name": "EventMarker",
-  "version": "0.1.2",
+  "name": "Arduino Serial to CSV",
+  "version": "0.0.2",
   "manifest_version": 2,
   "minimum_chrome_version": "31",
   "app": {
@@ -18,5 +18,5 @@
       "title": "Text editor"
     }
   },
-  "description": "client-side app for EventMarker device"
+  "description": "Control and receive data from a serial device, save to CSV file."
 }
