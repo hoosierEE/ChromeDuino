@@ -30,6 +30,7 @@ output {
   </br>
   <select id="port_list"><option>Please Wait...</option></select>
   <button id="connect_button">Connect</button>
+  <button id="disconnect_button" disabled=true>Disconnect</button>
 </div>
 
 <div id="control_box">
@@ -40,13 +41,13 @@ output {
 </div>
 
 <div id="csv_content_monitor">
-  <label>Monitor CSV File Being Generated</label>
+  <label>Device Output Monitor</label>
   <textarea id="textAreaId" readonly></textarea>
 </div>
 <button id="save_file">Save As</button>
 
 <div id="status_bar">
-  <label>Program Monitor</label>
+  <label>Program Status Monitor</label>
   <output></output>
 </div>
 
