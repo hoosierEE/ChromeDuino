@@ -2,8 +2,7 @@
 //
 // Author: Alex Shroyer
 // Copyright (c) 2014 Trustees of Indiana University
-//
-// emulates the Event Marker (but without blue teeth)
+
 #include "StateMachine.h"
 const uint8_t LED = 13;
 unsigned long timeWas = 0;
@@ -12,60 +11,67 @@ unsigned long interval = 2000;
 unsigned long experimentStartTime = 0;
 Expt experimentState = WAITING;
 
-void blink(uint8_t pin, uint16_t time) {
-  digitalWrite(pin, HIGH);
-  delay(time);
-  digitalWrite(pin, LOW);
+// TODO: this is a placeholder for an actual button press
+bool button = false;
+
+//// FUNCTIONS ////
+void blink(uint8_t pin, uint16_t time_ms)
+{
+    digitalWrite(pin, HIGH);
+    delay(time_ms);
+    digitalWrite(pin, LOW);
 }
 
-bool buzzer() {
-  if (Serial.available()) { // simulate buzzer to start experiment
-    char inByte = Serial.read();
-    if (inByte == 'b') {
-      experimentStartTime = millis(); // reset the start time
-      // do a longer blink
-      blink(LED, 500);
-      return true;
+void startExperiment(void)
+{
+    experimentStartTime = millis();
+}
+
+void runExperiment(void)
+{
+    // emulate users sending some button presses
+    timeIs = millis();
+    if (timeIs - timeWas > interval) {
+        Serial.print(timeIs - experimentStartTime);
+        Serial.println(", red, left");
+        timeWas = timeIs;
     }
-  }
-  return false;
 }
 
-void runExperiment() {
-  // emulate users sending some button presses
-  timeIs = millis(); // update loop timer
-  if (timeIs - timeWas > interval) {
-    Serial.print(timeIs - experimentStartTime);
-    Serial.println(", red, left");
-    timeWas = timeIs; // reset the start timer
-    //blink(LED, 50);
-  }
-}
 
+//// APP ////
 void setup() {
-  Serial.begin(9600);
-  pinMode(LED, OUTPUT);
-  // print the header for the CSV file
-  Serial.println("");
-  Serial.println("time, color, button");
+    Serial.begin(9600);
+    pinMode(LED, OUTPUT);
+    // print the header for the CSV file
+    Serial.println("");
 }
 
 void loop() {
-  switch(experimentState) {
+    switch(experimentState) {
 
-    case (WAITING):
-      if (buzzer()) {
-        experimentState = RUNNING;
-      }
-      break;
+        case (WAITING):
+            if ((Serial.available()) && (Serial.read() == 'b'))
+                experimentState = START_NEW_EXPT;
+            break;
 
-    case (RUNNING):
-      if (buzzer()) {
-        experimentState = WAITING;
-      }
-      else {
-        runExperiment();
-      }
-      break;
-  }
+        case START_NEW_EXPT:
+            blink(LED, 500);
+            startExperiment();
+            experimentState = RUNNING;
+            break;
+
+        case (RUNNING):
+            if (Serial.available()) {
+                char inByte = Serial.read();
+                if (inByte == 'b')
+                    experimentState = START_NEW_EXPT;
+                if (inByte == 's')
+                    experimentState = WAITING;
+            }
+            else {
+                runExperiment();
+            }
+            break;
+    }
 }

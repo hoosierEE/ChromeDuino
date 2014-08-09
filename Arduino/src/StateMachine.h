@@ -1,4 +1,5 @@
-typedef enum Expt
-  { WAITING
-  , RUNNING
-  };
+enum Expt
+{ WAITING
+, START_NEW_EXPT
+, RUNNING
+};
