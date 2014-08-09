@@ -1,6 +1,8 @@
 # Chrome Arduino
 This [Chrome App](https://developer.chrome.com/apps/about_apps) is an [Arduino](http://arduino.cc/) serial monitor
 
+![](https://raw.githubusercontent.com/hoosierEE/ChromeDuino/master/ChromeApp/assets/suchScreenshot.png)
+
 ## Install Development Version
 
 1. open Google Chrome browser
