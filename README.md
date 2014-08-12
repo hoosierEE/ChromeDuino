@@ -1,7 +1,14 @@
 # Chrome Arduino
 This [Chrome App](https://developer.chrome.com/apps/about_apps) is an [Arduino](http://arduino.cc/) serial monitor
 
-![](https://raw.githubusercontent.com/hoosierEE/ChromeDuino/master/ChromeApp/assets/suchScreenshot.png)
+#### OSX
+![](https://raw.githubusercontent.com/hoosierEE/ChromeDuino/master/ChromeApp/assets/OSX.png)
+
+#### Chrome OS
+![](https://raw.githubusercontent.com/hoosierEE/ChromeDuino/master/ChromeApp/assets/chromeOS.png)
+
+## Source Code
+This app is in the `ChromeApp` directory. An example Arduino program is in the `Arduino` directory.
 
 ## Install Development Version
 

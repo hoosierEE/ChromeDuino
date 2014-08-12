@@ -104,7 +104,7 @@ connection.onConnect.addListener(function() {
 
 // capture incoming serial data and put it somewhere
 connection.onReadLine.addListener(function(line) {
-    if (!/,/.test(line))
+    if (!/,/.test(line)) // received a line without a comma
         log("wow\n")
     else
         log(line)
