@@ -8,7 +8,7 @@ This [Chrome App](https://developer.chrome.com/apps/about_apps) is an [Arduino](
 ![](https://raw.githubusercontent.com/hoosierEE/ChromeDuino/master/ChromeApp/assets/chromeOS.png)
 
 ## Source Code
-This app is in the `ChromeApp` directory. An example Arduino program is in the `Arduino` directory.
+App location: `ChromeApp`. Example Arduino program location: `Arduino`.
 
 ## Install Development Version
 
