@@ -2,13 +2,15 @@
 This [Chrome App](https://developer.chrome.com/apps/about_apps) is an [Arduino](http://arduino.cc/) serial monitor
 
 #### OSX
-![](https://raw.githubusercontent.com/hoosierEE/ChromeDuino/master/ChromeApp/assets/OSX.png)
+![](https://raw.githubusercontent.com/hoosierEE/ChromeDuino/master/OSX.png)
 
 #### Chrome OS
-![](https://raw.githubusercontent.com/hoosierEE/ChromeDuino/master/ChromeApp/assets/chromeOS.png)
+![](https://raw.githubusercontent.com/hoosierEE/ChromeDuino/master/chromeOS.png)
 
 ## Source Code
-App location: `ChromeApp`. Example Arduino program location: `Arduino`.
+
+* [Example Arduino program](https://github.com/hoosierEE/ChromeDuino/blob/master/Arduino/src/src.ino)
+* [Chrome Packaged App](https://github.com/hoosierEE/ChromeDuino/tree/master/ChromeApp)
 
 ## Install Development Version
 
@@ -24,4 +26,4 @@ App location: `ChromeApp`. Example Arduino program location: `Arduino`.
 ## Run
 Click the `Launch` link in the extensions page to start the app.
 
-Or, if you have the Chrome App Launcher already installed, the app should appear there.
+Or, if you have the Chrome App Launcher already installed, the app should also appear there.
