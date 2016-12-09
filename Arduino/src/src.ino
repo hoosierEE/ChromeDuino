@@ -66,7 +66,7 @@ void loop() {
                 experimentState = START_NEW_EXPT;
             break;
 
-        case START_NEW_EXPT:
+        case (START_NEW_EXPT):
             blink(LED, 500);
             startExperiment();
             experimentState = RUNNING;
